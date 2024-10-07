@@ -33,7 +33,7 @@ SRCS = $(shell find src -name '*.sv') \
 # program: program your device with the compiled design
 ###################################################################
 
-all: smart.log $(PROJECT).asm.rpt $(PROJECT).sta.rpt 
+all: smart.log $(PROJECT).asm.rpt $(PROJECT).sta.rpt pof jic
 
 clean:
 	$(RM) -rf reports db incremental_db smart.log *.chg
@@ -63,7 +63,7 @@ QUARTUS_PGM  = $(QUARTUS_PATH)quartus_pgm
 QUARTUS_CPF  = $(QUARTUS_PATH)quartus_cpf
 
 ifeq ($(shell uname -m),x86_64)
-QUARTUS_ARGS = --64bit
+QUARTUS_ARGS = 
 endif
 
 MAP_ARGS = $(QUARTUS_ARGS) --family=$(FAMILY) --read_settings_files=on $(addprefix --source=,$(SRCS))
@@ -118,6 +118,9 @@ show:
 	
 pof: reports/$(PROJECT).sof
 	$(QUARTUS_CPF) -c -d $(FLASH_DEVICE) $< $(patsubst %.sof,%.pof,$<)
+	
+jic: reports/$(PROJECT).sof
+	$(QUARTUS_CPF) -c -s $(PART) -d $(FLASH_DEVICE) $< $(patsubst %.sof,%.jic,$<)
 
 ###################################################################
 # Programming the device
