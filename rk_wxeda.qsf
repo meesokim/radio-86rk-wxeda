@@ -41,7 +41,7 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:22:05  JUNE 17, 2011"
-set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY reports
 
 # Pin & Location Assignments
@@ -211,3 +211,21 @@ set_global_assignment -name VERILOG_FILE src/rk_wxeda.v
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_CLK
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_DAT
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SOURCE_FILE src/dma/k580wt57.v
+set_global_assignment -name SOURCE_FILE src/keyboard/rk_kbd.v
+set_global_assignment -name SOURCE_FILE src/sdram/SDRAM_Controller.v
+set_global_assignment -name SOURCE_FILE src/interface/k580ww55.v
+set_global_assignment -name SOURCE_FILE src/rk_wxeda.v
+set_global_assignment -name SOURCE_FILE src/cpu/k580wm80a.v
+set_global_assignment -name SOURCE_FILE src/sound/soundcodec.v
+set_global_assignment -name SOURCE_FILE src/video/rk_video.v
+set_global_assignment -name SOURCE_FILE src/video/k580wg75.v
+set_global_assignment -name SOURCE_FILE src/video/hvsync_generator.v
+set_global_assignment -name SOURCE_FILE src/video/rambuffer.v
+set_global_assignment -name SOURCE_FILE src/rom/bios.v
+set_global_assignment -name SOURCE_FILE src/rom/biossd.v
+set_global_assignment -name SOURCE_FILE src/rom/font.v
+set_global_assignment -name SOURCE_FILE src/keyboard/Keyboard.vhd
+set_global_assignment -name SOURCE_FILE src/keyboard/Debouncer.vhd
+set_global_assignment -name SOURCE_FILE src/keyboard/PS2Controller.vhd
+set_global_assignment -name SOURCE_FILE src/keyboard/KeyboardMapper.vhd

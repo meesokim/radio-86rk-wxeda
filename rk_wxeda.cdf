@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("/media/sf_Projects/Retrocomp/Radio86RK/radio-86rk-wxeda/reports/") File("rk_wxeda.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("reports/") File("rk_wxeda.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
